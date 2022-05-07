@@ -8,7 +8,8 @@ It has 2 different classes of skin cancer which are listed below :
 1. Benign
 2. Malignant
 
-In this kernel I will detect 2 different classes of moles using Convolution Neural Network with keras tensorflow in backend and then analyse the result to see how the model can be useful in practical scenario.
+# Problem we are trying to solve:
+The first step to identify whether the skin lesion is malignant or benign for a dermatologist is to do a skin biopsy. In the skin biopsy, the dermatologist takes some part of the skin lesion and examines it under the microscope. The current process takes almost a week or more, starting from getting a dermatologist appointment to getting a biopsy report. This project aims to shorten the current gap to just a couple of days by providing the predictive model using Computer-Aided Diagnosis (CAD). The approach uses Convolutional Neural Network (CNN) to classify nine types of skin cancer from outlier lesions images. This reduction of a gap has the opportunity to impact millions of people positively.
 
 
 Dataset Link - https://www.kaggle.com/datasets/fanconic/skin-cancer-malignant-vs-benign
