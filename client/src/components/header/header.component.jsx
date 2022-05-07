@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
@@ -10,10 +10,15 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
+import { useNavigate } from "react-router-dom";
 
 import { ModifiedAppBar } from "./header.style";
-const pages = ["Products", "Pricing", "Blog"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const pages = [
+  { name: "Home", url: "home" },
+  { name: "Reports", url: "reports" },
+  { name: "Health Articles", url: "articles" },
+];
+const settings = ["Profile", "Your reports", "Logout"];
 
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -34,6 +39,8 @@ const Header = () => {
     setAnchorElUser(null);
   };
 
+  const navigate = useNavigate();
+
   return (
     <ModifiedAppBar>
       <Container maxWidth="xl">
@@ -42,7 +49,16 @@ const Header = () => {
             variant="h6"
             noWrap
             component="div"
-            sx={{ mr: 2, display: { xs: "none", md: "flex" }, letterSpacing: '1.5px', fontSize: '1.5em' }}
+            sx={{
+              mr: 2,
+              display: { xs: "none", md: "flex" },
+              letterSpacing: "1.5px",
+              fontSize: "1.5em",
+              '&:hover' : {
+                cursor: 'pointer',
+              }
+            }}
+            onClick={() => navigate('/')}
           >
             Jeevan.Data
           </Typography>
@@ -77,8 +93,14 @@ const Header = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center" sx={{letterSpacing: '2px'}}>{page}</Typography>
+                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                  <Typography
+                    textAlign="center"
+                    sx={{ letterSpacing: "2px" }}
+                    onClick={() => navigate(`/${page.url}`)}
+                  >
+                    {page.name}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -87,18 +109,33 @@ const Header = () => {
             variant="h6"
             noWrap
             component="div"
-            sx={{ flexGrow: 1, display: { xs: "flex", md: "none" }, letterSpacing: '1.5px', fontSize: '1.5em' }}
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+              letterSpacing: "1.5px",
+              fontSize: "1.5em",
+              '&:hover' : {
+                cursor: 'pointer',
+              }
+            }}
+            onClick={() => navigate('/')}
           >
             Jeevan.Data
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, mx: 1.5, color: "white", display: "block", letterSpacing: '2px' }}
+                key={page.name}
+                onClick={() => {handleCloseNavMenu(); navigate(`/${page.url}`)}}
+                sx={{
+                  my: 2,
+                  mx: 1.5,
+                  color: "white",
+                  display: "block",
+                  letterSpacing: "2px",
+                }}
               >
-                {page}
+                {page.name}
               </Button>
             ))}
           </Box>

@@ -32,7 +32,7 @@ export const FeatureDiv = styled('div')({
     padding: '1em 2em',
     flexDirection: 'row',
     width: '70%',
-    backgroundColor: '#e6cdf22f',
+    backgroundColor: '#e6cdf220',
     borderRadius: '1.5em',
     '&:nth-of-type(2n)': {
         flexDirection: 'row-reverse',
@@ -45,14 +45,12 @@ export const FeatureDiv = styled('div')({
 export const FeatureContent = styled('div')({
     margin: '1em 0',
     textAlign: 'center',
-    letterSpacing: '1px',
-    wordSpacing: '2px',
-    fontSize: '1.2em',
-    fontWeight: '500',
+    fontSize: '1em',
+    fontWeight: '400',
     width: '55%',
 });
 
 export const FeatureImg = styled('img')({
-    width: '200px',
-    height: '200px',
+    minHeight: '300px',
+    width: '300px',
 });

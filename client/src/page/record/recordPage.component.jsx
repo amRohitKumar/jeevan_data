@@ -55,7 +55,7 @@ const RecordPage = () => {
   return (
     <RecordPageDiv>
       <Typography variant="h2" component="div" sx={{mb: '10px', ml: '1.5em', fontWeight: '400'}}>
-        Records -
+        Reports -
       </Typography>
       <RecordSection>
         {records.map((record) => (

@@ -8,8 +8,8 @@ const Hero = () => {
     return(
         <>
             <HeroDiv>
-                <MainTitle> The best privacy online </MainTitle>
-                <MainHeading>3x faster than Chrome. Better protection from Google and Big Tech.</MainHeading>
+                <MainTitle> Your online doctor </MainTitle>
+                <MainHeading>All digonosis are done on high level made ML model with an accuracy of over 90%</MainHeading>
                 <LoginButton startIcon={<HealthAndSafetyIcon />} size="large" >Login</LoginButton>
                 <DoctorImg src={DoctorImage} alt="Medical consultation" />
                 <img src={HeroPageDivider} alt="Divider"/>

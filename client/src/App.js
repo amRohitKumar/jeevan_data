@@ -5,6 +5,7 @@ import SignInAndSignUpPage from './page/login/signIn-logIn.component';
 import HomePage from './page/home/homePage.component';
 import RecordPage from './page/record/recordPage.component';
 import ArticlePage from './page/article/articlePage.component';
+import ArticleShowPage from './page/article-show/articleShow.component';
 import Footer from './components/footer/footer.component';
 
 import './App.css';
@@ -17,8 +18,9 @@ function App() {
         <Route path="/" element={<HeroPage />} />
         <Route path="/login" element={<SignInAndSignUpPage />} />
         <Route path="/home" element={<HomePage />} />
-        <Route path="/records" element={<RecordPage />} />
+        <Route path="/reports" element={<RecordPage />} />
         <Route path="/articles" element={<ArticlePage />} />
+        <Route path="/showarticle" element={<ArticleShowPage />} />
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
       <Footer />
