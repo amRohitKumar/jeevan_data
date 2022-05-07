@@ -8,4 +8,9 @@ It has 2 different classes of skin cancer which are listed below :
 1. Benign
 2. Malignant
 
-In this kernel I will try to detect 2 different classes of moles using Convolution Neural Network with keras tensorflow in backend and then analyse the result to see how the model can be useful in practical scenario
+In this kernel I will detect 2 different classes of moles using Convolution Neural Network with keras tensorflow in backend and then analyse the result to see how the model can be useful in practical scenario.
+
+
+Dataset Link - https://www.kaggle.com/datasets/fanconic/skin-cancer-malignant-vs-benign
+
+
