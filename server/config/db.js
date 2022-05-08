@@ -1,6 +1,5 @@
-const dotenv = require("dotenv").config();
 const mongoose = require("mongoose");
-const url = process.env.MONGO_URI;
+const url = 'mongodb://localhost:27017/jeevanData';
 const connectDB = async () => {
   try {
     const conn = await mongoose.connect(url);

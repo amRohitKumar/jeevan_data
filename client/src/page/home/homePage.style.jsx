@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import BGImage from '../../assets/images/background2.png';
+import BGImage2 from '../../assets/svg/browser-embellishments.svg';
 
 
 export const HomeDiv = styled('div')({
@@ -25,6 +26,9 @@ export const HomeContent = styled('div')({
     display: 'flex',
     justifyContent: 'center',
     padding: '2em 3em',
+    '@media (max-width:580px)': {
+        flexDirection: 'column',
+    }
 });
 
 export const HomeLeftDiv = styled('div')({
@@ -33,6 +37,20 @@ export const HomeLeftDiv = styled('div')({
 
 export const HomeRightDiv = styled('div')({
     width: '45%',   
+    position: 'relative',
+    display: 'flex',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    alignItems: 'center',
+    '&::before' : {
+        content: '""',
+        backgroundImage: `url(${BGImage2})`,
+        width: '100%',
+        height: '100%',
+        position: 'absolute',
+        backgroundRepeat: 'no-repeat',
+        top: '-200px',
+    }
 });
 
 export const FileInput = styled('div')({
@@ -43,5 +61,10 @@ export const FileInput = styled('div')({
     '& label': {
         margin: '20px 0',
         letterSpacing: '1.1px',
-    }
+    },
 });
+
+export const DiseaseImg = styled('div')({
+    width: '250px',
+    height: '250px',
+}); 

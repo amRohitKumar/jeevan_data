@@ -11,18 +11,37 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { useNavigate } from "react-router-dom";
-
+import { useSelector, useDispatch } from "react-redux";
 import { ModifiedAppBar } from "./header.style";
+
+import {
+  auth,
+  signInWithPopup,
+  provider,
+  signOut,
+  onAuthStateChanged,
+} from "../../firebase";
+
+import {
+  selectUser,
+  signOutState,
+} from "../../redux/features/users/userSlice";
+
 const pages = [
   { name: "Home", url: "home" },
   { name: "Reports", url: "reports" },
   { name: "Health Articles", url: "articles" },
 ];
-const settings = ["Profile", "Your reports", "Logout"];
+const settings = [{name: "Profile", url: "home"}, {name: "Your reports", url: 'reports'}, {name: "Logout", url: "logout"}];
 
 const Header = () => {
+  const navigate = useNavigate();
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
+
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -39,7 +58,36 @@ const Header = () => {
     setAnchorElUser(null);
   };
 
-  const navigate = useNavigate();
+  const handleAuth = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const user = result.user;
+        console.log(`Welcome ${user.displayName} !!!`);
+        console.log(user);
+      })
+      .catch((error) => {
+        const { code, message, email } = error;
+        console.log(
+          `Error !!! Code = ${code}, Message = ${message}, Mail = ${email}`
+        );
+      });
+  };
+
+  const handleSignOut = () => {
+    signOut(auth)
+      .then(() => {
+        console.log("User signed out !!!");
+        dispatch(signOutState());
+      })
+      .then(() => navigate('/'))
+      .catch((error) => {
+        const { code, message, email } = error;
+        console.log(
+          `Error !!! Code = ${code}, Message = ${message}, Mail = ${email}`
+        );
+        window.alert(`Error !!! Code = ${code}, Message = ${message}, Mail = ${email}`);
+      })
+  };
 
   return (
     <ModifiedAppBar>
@@ -54,16 +102,16 @@ const Header = () => {
               display: { xs: "none", md: "flex" },
               letterSpacing: "1.5px",
               fontSize: "1.5em",
-              '&:hover' : {
-                cursor: 'pointer',
-              }
+              "&:hover": {
+                cursor: "pointer",
+              },
             }}
-            onClick={() => navigate('/')}
+            onClick={() => navigate("/")}
           >
             Jeevan.Data
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          {user.email&&<Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -104,7 +152,7 @@ const Header = () => {
                 </MenuItem>
               ))}
             </Menu>
-          </Box>
+          </Box>}
           <Typography
             variant="h6"
             noWrap
@@ -114,19 +162,22 @@ const Header = () => {
               display: { xs: "flex", md: "none" },
               letterSpacing: "1.5px",
               fontSize: "1.5em",
-              '&:hover' : {
-                cursor: 'pointer',
-              }
+              "&:hover": {
+                cursor: "pointer",
+              },
             }}
-            onClick={() => navigate('/')}
+            onClick={() => navigate("/")}
           >
             Jeevan.Data
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          {user.email&&<Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
                 key={page.name}
-                onClick={() => {handleCloseNavMenu(); navigate(`/${page.url}`)}}
+                onClick={() => {
+                  handleCloseNavMenu();
+                  navigate(`/${page.url}`);
+                }}
                 sx={{
                   my: 2,
                   mx: 1.5,
@@ -138,9 +189,9 @@ const Header = () => {
                 {page.name}
               </Button>
             ))}
-          </Box>
+          </Box>}
 
-          <Box sx={{ flexGrow: 0 }}>
+          {user.email&&<Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
@@ -162,13 +213,22 @@ const Header = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
+              {settings.map((setting, ind) => {
+                  if(ind===2)
+                    return(
+                      <MenuItem key={setting.name} onClick={handleSignOut}>
+                        <Typography textAlign="center">{setting.name}</Typography>
+                      </MenuItem>
+                    )
+                  else 
+                    return(
+                      <MenuItem key={setting.name} onClick={() => {handleCloseUserMenu(); navigate(`/${setting.url}`)}}>
+                        <Typography textAlign="center">{setting.name}</Typography>
+                      </MenuItem>
+                  )
+              })}
             </Menu>
-          </Box>
+          </Box>}
         </Toolbar>
       </Container>
     </ModifiedAppBar>

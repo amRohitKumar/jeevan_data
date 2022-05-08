@@ -1,9 +1,71 @@
+import { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import {createUserWithEmailAndPassword, auth} from '../../firebase';
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import api from '../../api/users'
+
+import {
+  selectUser,
+  setUserLoginDetails,
+  signOutState,
+} from "../../redux/features/users/userSlice";
 
 import { SignUpDiv, ButtonDiv } from "./sign-up.style";
 
 const SignUp = () => {
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confPassword, setConffPassword] = useState('');
+
+  const handleName = (evt) => {
+    setName(evt.target.value);
+  }
+
+  const handleEmail = (evt) => {
+    setEmail(evt.target.value);
+  }
+
+  const handlePassword = (evt) => {
+    setPassword(evt.target.value);
+  }
+
+  const handleConfirmPassword = (evt) => {
+    setConffPassword(evt.target.value);
+  }
+
+  const handleSignUp = async () => {
+    if(password !== confPassword) return;
+    createUserWithEmailAndPassword(auth, email, password)
+    .then(async (userCredential) => {
+      const user = userCredential.user;
+      const res = await api.post('/create/user', {name: name, email: email});
+      return res.data.userId;
+    })
+    .then((userId) => {
+      dispatch(
+        setUserLoginDetails({
+          name: name,
+          email: email,
+          id: userId,
+        })
+      );
+    })
+    .then(() => navigate('/home'))
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log("error in sign up", errorCode, errorMessage);
+      window.alert("Error in sign up " + errorCode + errorMessage);
+    });
+  }
+
   return (
     <SignUpDiv>
       <h2>I do not have a account.</h2>
@@ -12,42 +74,47 @@ const SignUp = () => {
       </span>
       <form>
         <TextField
-          id="outlined-basic"
           label="Disply Name"
           name="displayName"
           varient="outlined"
           type="text"
+          value={name}
+          onChange={handleName}
           sx={{ marginBottom: "1.2em" }}
           required
         />
         <TextField
-          id="outlined-basic"
           label="Email"
           name="email"
           variant="outlined"
+          value={email}
+          onChange={handleEmail}
           sx={{ marginBottom: "1.2em" }}
           required
         />
         <TextField
-          id="outlined-basic"
           label="Password"
           name="password"
           variant="outlined"
           type="password"
+          value={password}
+          onChange={handlePassword}
           sx={{ marginBottom: "1.2em" }}
           required
         />
         <TextField
-          id="outlined-basic"
           label="Confirm Password"
           name="confirmPassword"
           variant="outlined"
+          value={confPassword}
+          onChange={handleConfirmPassword}
           sx={{ marginBottom: "1.2em" }}
           type="password"
           required
+          error={password!==confPassword?true:false}
         />
         <ButtonDiv>
-          <Button variant="contained" type="submit" sx={{ backgroundColor: '#3d0ba9'}}>
+          <Button variant="contained" type="button" sx={{ backgroundColor: '#3d0ba9'}} onClick={handleSignUp}>
             Sign Up
           </Button>
         </ButtonDiv>

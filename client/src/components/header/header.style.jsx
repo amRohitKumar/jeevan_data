@@ -7,4 +7,4 @@ export const ModifiedAppBar = styled(AppBar)({
     color: 'white',
     position: 'sticky',
     top: '0',
-})
+});

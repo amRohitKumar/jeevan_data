@@ -5,23 +5,19 @@ const doctorSchema = mongoose.Schema(
       type: String,
       required: [true, "Please add a name"],
     },
-    email:{
-        type:String,
-        required:[true,'Email is required']
+    email: {
+      type: String,
+      required: [true, 'Email is required']
     },
-    password:{
-        type:String,
-        required:[true,'Password is required']
+    specialisation: {
+      type: String,
+      enum: ['Covid-19', 'Pneumonia', 'Skin_Cancer', 'Retinal_Disease'],
     },
-    specialisation:{
-        type:String,
-        required:[true,'Specialisation is required']
-    },
-    contactDetails:{
-      type:Number,
-        required:[true,'contact details is required']
+    address: {
+      type: String,
+      required: [true, 'Address is required']
+    }
   }
-}
 );
 
 module.exports = mongoose.model("Doc", doctorSchema);

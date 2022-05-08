@@ -8,7 +8,10 @@ const getReports = asyncHandler(async (req, res) => {
 });
 
 const newUser = asyncHandler(async (req, res) => {
- 
+  const{name, email} = req.body;
+  const newUser = new User({name: name, email: email});
+  const registeredUser = await newUser.save();
+  res.status(200).send({userId: registeredUser._id});
 });
 
 const updateUser = asyncHandler(async (req, res) => {
