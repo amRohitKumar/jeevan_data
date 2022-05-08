@@ -9,7 +9,6 @@ import api from '../../api/users'
 import {
   selectUser,
   setUserLoginDetails,
-  signOutState,
 } from "../../redux/features/users/userSlice";
 
 import { SignUpDiv, ButtonDiv } from "./sign-up.style";

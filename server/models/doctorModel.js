@@ -9,7 +9,7 @@ const doctorSchema = mongoose.Schema(
       type: String,
       required: [true, 'Email is required']
     },
-    specialisation: {
+    specialization: {
       type: String,
       enum: ['Covid-19', 'Pneumonia', 'Skin_Cancer', 'Retinal_Disease'],
     },

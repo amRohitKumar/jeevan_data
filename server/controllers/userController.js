@@ -2,10 +2,25 @@ const asyncHandler = require("express-async-handler");
 const User = require("../models/userModel");
 
 const getReports = asyncHandler(async (req, res) => {
-  const userId = req.params.userid;
-  const user = await User.findById(userId);
+  const {email} = req.params; 
+  const user = await User.findOne({"email": email}); console.log(user);
   res.status(200).send(user.reports);
 });
+
+const getUserByEmail = asyncHandler(async (req, res) => {
+  const {emailId} = req.params;
+  const reqUser = await User.findOne({email: emailId});
+  res.status(200).send(reqUser);
+})
+
+const addReport = asyncHandler(async (req, res) => {
+  const email = req.params.email;
+  const report = req.body;
+  const reqUser = await User.findOne({"email": email}); 
+  reqUser.reports.unshift(report);
+  await reqUser.save();
+  res.status(200).send();
+})
 
 const newUser = asyncHandler(async (req, res) => {
   const{name, email} = req.body;
@@ -27,5 +42,5 @@ const uploadImg = asyncHandler(async (req, res) => {
   
 });
 
-module.exports = { uploadImg, getReports , newUser, updateUser};
+module.exports = { uploadImg, getReports , newUser, updateUser, getUserByEmail, addReport};
 

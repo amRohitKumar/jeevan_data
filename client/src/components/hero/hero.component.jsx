@@ -34,7 +34,7 @@ const Hero = () => {
             <LoginButton
             startIcon={<LocalHospitalIcon />}
             size="large"
-            onClick={() => navigate("/logindoctor")}
+            onClick={() => navigate("/doctorpage")}
             >
             Login as Doctor
             </LoginButton>

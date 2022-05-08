@@ -1,4 +1,5 @@
 import Typography from "@mui/material/Typography";
+import Logo from '../../assets/images/health-articles-feature.jpg'
 
 import {
   RecodComponentDiv,
@@ -8,21 +9,22 @@ import {
 } from "./record.style";
 
 const RecordComponent = ({
-  imageUrl,
+  imageName,
   testedFor,
   result,
-  testedOn,
-  accuracy,
+  testDate,
 }) => {
+    testDate = new Date(testDate);
+    testDate = testDate.toUTCString();
   return (
     <RecodComponentDiv elevation={3}>
-      <RecordImage src={imageUrl} alt="sample-image" />
+      <RecordImage src={Logo} alt="sample-image" />
       <RecordContent>
         <WrapperDiv>
           <Typography
             variant="subtitle2"
             component="span"
-            sx={{ minWidth: "20%", textAlign: "left", mr: "5px" }}
+            sx={{ minWidth: "20%", textAlign: "left", mr: "15px" }}
           >
             Tested For:{" "}
           </Typography>
@@ -34,19 +36,19 @@ const RecordComponent = ({
           <Typography
             variant="subtitle2"
             component="span"
-            sx={{ minWidth: "20%", textAlign: "left", mr: "5px" }}
+            sx={{ minWidth: "20%", textAlign: "left", mr: "15px" }}
           >
             Test Date:{" "}
           </Typography>
           <Typography variant="body1" component="span">
-            {testedOn}
+            {testDate}
           </Typography>
         </WrapperDiv>
         <WrapperDiv>
           <Typography
             variant="subtitle2"
             component="span"
-            sx={{ minWidth: "20%", textAlign: "left", mr: "5px" }}
+            sx={{ minWidth: "20%", textAlign: "left", mr: "15px" }}
           >
             Result:{" "}
           </Typography>
@@ -54,7 +56,7 @@ const RecordComponent = ({
             {result}
           </Typography>
         </WrapperDiv>
-        <WrapperDiv>
+        {/* <WrapperDiv>
           <Typography
             variant="subtitle2"
             component="span"
@@ -65,7 +67,7 @@ const RecordComponent = ({
           <Typography variant="body1" component="span">
             {accuracy}
           </Typography>
-        </WrapperDiv>
+        </WrapperDiv> */}
       </RecordContent>
     </RecodComponentDiv>
   );

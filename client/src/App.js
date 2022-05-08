@@ -20,10 +20,11 @@ function App() {
         <Route path="/loginuser" element={<SignInAndSignUpPage />} />
         <Route path="/home" element={<HomePage />} />
         <Route path="/reports" element={<RecordPage />} />
+        <Route path="/doctors" element={<DoctorPage />} />
         <Route path="/articles" element={<ArticlePage />} />
         <Route path="/doctorpage" element={<DoctorPage />} />
         <Route path="/showarticle" element={<ArticleShowPage />} />
-        {/* <Route path="*" element={<NotFound />} /> */}
+        <Route path="*" element={<HeroPage />} />
       </Routes>
       <Footer />
     </div>

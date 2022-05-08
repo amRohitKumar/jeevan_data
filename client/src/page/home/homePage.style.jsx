@@ -1,10 +1,12 @@
 import styled from "@emotion/styled";
+import { Paper } from "@mui/material";
 import BGImage from '../../assets/images/background2.png';
 import BGImage2 from '../../assets/svg/browser-embellishments.svg';
 
 
 export const HomeDiv = styled('div')({
-
+    display: 'flex',
+    flexDirection: 'column',
 });
 
 export const HomeHeading = styled('div')({
@@ -42,6 +44,7 @@ export const HomeRightDiv = styled('div')({
     justifyContent: 'center',
     flexDirection: 'column',
     alignItems: 'center',
+    backgroundColor: '#bab8b83b',
     '&::before' : {
         content: '""',
         backgroundImage: `url(${BGImage2})`,
@@ -67,4 +70,10 @@ export const FileInput = styled('div')({
 export const DiseaseImg = styled('div')({
     width: '250px',
     height: '250px',
+}); 
+
+export const DoctorSuggestionDiv = styled(Paper)({
+    margin: "2em 3em",
+    padding: '3em 1em',
+
 }); 

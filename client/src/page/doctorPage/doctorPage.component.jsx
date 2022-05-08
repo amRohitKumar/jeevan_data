@@ -11,12 +11,13 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import Button from "@mui/material/Button";
+import api from '../../api/users';
 
 const DoctorPage = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [specialization, setSpecialization] = useState("");
-  const [address, setAddress] = useState("");
+  let [name, setName] = useState("");
+  let [email, setEmail] = useState("");
+  let [specialization, setSpecialization] = useState("");
+  let [address, setAddress] = useState("");
 
   const handleNameChange = (evt) => {
     setName(evt.target.value);
@@ -34,9 +35,12 @@ const DoctorPage = () => {
     setAddress(evt.target.value);
   };
 
-  const handleSubmit = (evt) => {
-    // a post request
-    // reset values
+  const handleSubmit = async(evt) => {
+    const doctorObj = {name, email, specialization, address}; console.log(doctorObj);
+    const res = await api.post('/create/doc', {doctorObj});
+    if(res.statusText === "OK"){
+      setName(''); setEmail(''); setAddress(''); setSpecialization('');
+    }
   };
 
   return (

@@ -6,7 +6,9 @@ const {
   newUser,
   updateUser,
   uploadImg,
-  getReports
+  getReports,
+  getUserByEmail,
+  addReport
 } = require("../controllers/userController");
 
 const {
@@ -16,7 +18,9 @@ const {
   getDocBySpec
 } = require("../controllers/docController");
 
-router.get("/user/:userid", getReports)
+router.get("/reports/:email", getReports);
+router.get("/user/:emailId", getUserByEmail);
+router.post('/addreport/:email', addReport);
 router.post("/user/:userid/:spec", uploadImg);
 router.post("/create/user", newUser);
 router.put("/user/:userid", updateUser);

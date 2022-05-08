@@ -8,16 +8,22 @@ const getAllDoc = asyncHandler(async (req, res) => {
 
   const getDocBySpec = asyncHandler(async (req, res) => {
     const spec = req.params.spec;
+    const allDoc = await Doc.find(); console.log(allDoc);
     const docs = [];
-    for(let doc of Doc)
+    for(let doc of allDoc)
     {
-      if(doc.specialisation == spec) {docs.push(doc);}
+      if(doc.specialization == spec) {docs.push(doc);}
     }
+    console.log(docs);
     res.status(200).send(docs);
   });
 
 const newDoc = asyncHandler(async(req,res) => {
-  
+  const {doctorObj} = req.body; console.log(doctorObj);
+  const newDoctor = new Doc({...doctorObj}); 
+  const registeredDoctro = await newDoctor.save();
+  console.log(registeredDoctro);
+  res.status(200).send(); 
 })
 
 const updateDoc = asyncHandler(async (req, res) => {

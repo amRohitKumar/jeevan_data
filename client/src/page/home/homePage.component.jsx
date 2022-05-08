@@ -7,6 +7,11 @@ import Select from "@mui/material/Select";
 import Typography from "@mui/material/Typography";
 import CircularProgress from "@mui/material/CircularProgress";
 import api from "../../api/disease";
+import userApi from "../../api/users";
+import { useSelector } from "react-redux";
+import DoctorSuggestion from "../../components/doctorSuggestion/doctorSuggestion.component";
+
+import { selectUser } from "../../redux/features/users/userSlice";
 
 import {
   HomeDiv,
@@ -15,13 +20,15 @@ import {
   HomeLeftDiv,
   HomeRightDiv,
   FileInput,
-  DiseaseImg,
+  DoctorSuggestionDiv,
 } from "./homePage.style";
 
 const HomePage = () => {
+  const user = useSelector(selectUser);
   const [disease, setDisease] = useState("");
   const [diseaseImage, setImage] = useState(null);
   const [result, setResult] = useState("");
+  const [doctors, setDoctors] = useState([]);
 
   const handleChange = (event) => {
     setDisease(event.target.value);
@@ -38,8 +45,18 @@ const HomePage = () => {
       const formData = new FormData();
       formData.append("image", diseaseImage);
       formData.append("disease", disease);
+      const currDate = new Date();
       const response = await api.post("/predict", formData);
-      console.log(response.data.result);
+      const res = await userApi.post(`/addreport/${user.email}`, {
+        testedFor: disease,
+        testDate: currDate,
+        result: response.data.result,
+        imageName: diseaseImage.name,
+      });
+      const relatedDoc = await userApi.get(`/doc/${disease}`);
+      console.log(relatedDoc);
+      setDoctors(relatedDoc.data);
+      console.log(response.data.result, res);
       setResult(response.data.result);
     };
     getResult();
@@ -90,7 +107,7 @@ const HomePage = () => {
           </form>
         </HomeLeftDiv>
         <HomeRightDiv>
-          {(
+          {
             <>
               <Typography
                 variant="h4"
@@ -104,9 +121,19 @@ const HomePage = () => {
                 {result}
               </Typography>
             </>
-          )}
+          }
         </HomeRightDiv>
       </HomeContent>
+      {!!doctors.length&&<DoctorSuggestionDiv>
+        <Typography variant="h4" gutterBottom>
+          Suggested Doctors -
+        </Typography>
+        <div>
+          {doctors.map((doc) => (
+            <DoctorSuggestion key={doc._id} {...doc} />
+          ))}
+        </div>
+      </DoctorSuggestionDiv>}
     </HomeDiv>
   );
 };

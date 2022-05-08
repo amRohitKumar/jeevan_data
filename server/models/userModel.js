@@ -16,6 +16,7 @@ const userSchema = mongoose.Schema(
         testedFor:{type:String},
         testDate:{type:Date},
         result:{type:String},
+        imageName: {type: String},
       }
     ]
   },
