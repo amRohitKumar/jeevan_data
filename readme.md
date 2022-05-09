@@ -4,7 +4,7 @@ We plan to create an ecosystem where patients can store their medical history an
 enable digitalisation of medical records and be a carrier in the government of
 India’s ayushman bharat yojana. We plan to shift Indian patients on preventive
 healthcare using AI-based algorithms which can identify various diseases like Skin
-Cancer, Covid-19 in advance and will prompt the user to visit the doctor.
+Cancer, Covid-19, Retinal Diseases,Pneumonia,etc. in advance and will prompt the user to visit the doctor.
 This will help in reducing medical bills of patients and will help them to live a better
 life. This ecosystem will also reduce the burden on the medical infrastructure and
 doctors of our country.
