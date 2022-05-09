@@ -21,13 +21,13 @@ doctors of our country.
 
 # Tech Stack
 
- React Js,Node Js,MongoDB,Express (MERN-Stack),Redux,REST-APIs,Styling
-frameworks,  Python,OpenCV,Flask,PyTorch,Docker,Seaborn,MatplotLib, TensorFlow.
+1. Web Application - React Js,Node Js,MongoDB,Express (MERN-Stack),Redux,REST-APIs,Styling frameworks.
+2. AI -  Python,OpenCV,Flask,PyTorch,Docker,Seaborn,MatplotLib, TensorFlow.
 
 # Members:
 
-1.Apoorva Bhardwaj,B.Tech in Electrical Engineering,4th semester.
-2.Mohd Rehan,B.Tech in Electrical Engineering,4th semester.
-3.Himanshu Golchha,B.Tech in Electrical Engineering,4th semester.
-4.Harsh Gupta,B.Tech in Electronics and Communications Engineering,4th semester.
-5.Rohit Kumar, B.Tech in Mining Engineering,4th semester.
+1. Apoorva Bhardwaj,B.Tech in Electrical Engineering,4th semester.
+2. Mohd Rehan,B.Tech in Electrical Engineering,4th semester.
+3. Himanshu Golchha,B.Tech in Electrical Engineering,4th semester.
+4. Harsh Gupta,B.Tech in Electronics and Communications Engineering,4th semester.
+5. Rohit Kumar, B.Tech in Mining Engineering,4th semester.
