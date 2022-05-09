@@ -24,7 +24,7 @@ doctors of our country.
 1. Web Application - React Js,Node Js,MongoDB,Express (MERN-Stack),Redux,REST-APIs,Styling frameworks.
 2. AI -  Python,OpenCV,Flask,PyTorch,Docker,Seaborn,MatplotLib, TensorFlow.
 
-# Members:
+# Devlopers:
 
 1. Apoorva Bhardwaj,B.Tech in Electrical Engineering
 2. Mohd Rehan,B.Tech in Electrical Engineering
