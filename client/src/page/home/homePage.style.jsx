@@ -27,17 +27,19 @@ export const HomeHeading = styled('div')({
 export const HomeContent = styled('div')({
     display: 'flex',
     justifyContent: 'center',
+    alignItems: 'center',
     padding: '2em 3em',
-    '@media (max-width:580px)': {
-        flexDirection: 'column',
-    }
+    flexDirection: 'column',
 });
 
-export const HomeLeftDiv = styled('div')({
-    width: '40%',
+export const HomeUploadDiv = styled('div')({
+    display: 'flex',
+    border: '3px dashed #0b64b4',
+    padding: '2em 2em',
+    width: '60%'
 });
 
-export const HomeRightDiv = styled('div')({
+export const HomeResultDiv = styled('div')({
     width: '45%',   
     position: 'relative',
     display: 'flex',
@@ -53,18 +55,18 @@ export const HomeRightDiv = styled('div')({
         position: 'absolute',
         backgroundRepeat: 'no-repeat',
         top: '-200px',
-    }
+    },
+    display: 'none',
 });
 
 export const FileInput = styled('div')({
     // margin: '2em 0',
     display: 'flex',
-    gap: '2em',
+    width: '100%',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '0.5em',
     fontSize: '1.2em',
-    '& label': {
-        margin: '20px 0',
-        letterSpacing: '1.1px',
-    },
 });
 
 export const DiseaseImg = styled('div')({
@@ -77,3 +79,38 @@ export const DoctorSuggestionDiv = styled(Paper)({
     padding: '3em 1em',
 
 }); 
+
+export const FileUploadLabel = styled('span')({
+    borderRadius: '5px',
+    fontWeight: '400',
+    padding: '10px 43px',
+    fontFamily: "'Open Sans', sans-serif",
+    border: '1px solid #1677cb',
+    color: '#fff',
+    backgroundColor: '#6dace3',
+    transition: 'background-color 150ms ease-in',
+    cursor: 'pointer',
+    '&:hover': {
+        backgroundColor: '#3c92dc',
+    }
+});
+
+export const DropMessageDiv = styled('div')({
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+});
+
+export const DropMessageHeaderCSS = {
+    fontSize: '22px',
+    fontWeight: '600',
+    marginTop: '15px',
+    marginBottom: '15px',
+    letterSpacing: '1.5px',
+};
+
+export const PreviewImage = styled('img')({
+    width: '40%',
+    aspectRatio: '16/9',
+    marginBottom: '10px',
+})
