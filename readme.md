@@ -28,6 +28,5 @@ doctors of our country.
 
 1. Apoorva Bhardwaj,B.Tech in Electrical Engineering
 2. Mohd Rehan,B.Tech in Electrical Engineering
-3. Himanshu Golchha,B.Tech in Electrical Engineering
-4. Harsh Gupta,B.Tech in Electronics and Communications Engineering
-5. Rohit Kumar, B.Tech in Mining Engineering
+3. Harsh Gupta,B.Tech in Electronics and Communications Engineering
+4. Rohit Kumar, B.Tech in Mining Engineering
