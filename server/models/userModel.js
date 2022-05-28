@@ -5,7 +5,7 @@ const userSchema = mongoose.Schema(
   {
     name:{
       type:String,
-      required:[true,'admin Email is required']
+      required:[true,'admin Name is required']
     },
     email:{
         type:String,
@@ -17,6 +17,7 @@ const userSchema = mongoose.Schema(
         testDate:{type:Date},
         result:{type:String},
         imageName: {type: String},
+        imageUrl: {type: String},
       }
     ]
   },

@@ -9,7 +9,7 @@ import {
 } from "./record.style";
 
 const RecordComponent = ({
-  imageName,
+  imageUrl,
   testedFor,
   result,
   testDate,
@@ -18,7 +18,7 @@ const RecordComponent = ({
     testDate = testDate.toUTCString();
   return (
     <RecodComponentDiv elevation={3}>
-      <RecordImage src={Logo} alt="sample-image" />
+      <RecordImage src={imageUrl} alt="sample-image" />
       <RecordContent>
         <WrapperDiv>
           <Typography

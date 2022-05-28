@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { Paper } from "@mui/material";
 import BGImage from '../../assets/images/background2.png';
-import BGImage2 from '../../assets/svg/browser-embellishments.svg';
+import BGImage2 from '../../assets/images/background3.png';
 
 
 export const HomeDiv = styled('div')({
@@ -40,13 +40,15 @@ export const HomeUploadDiv = styled('div')({
 });
 
 export const HomeResultDiv = styled('div')({
-    width: '45%',   
+    width: '60%', 
+    height: '10em',
     position: 'relative',
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'column',
     alignItems: 'center',
-    backgroundColor: '#bab8b83b',
+    margin: '1em 0',
+    padding: '0 2em',
     '&::before' : {
         content: '""',
         backgroundImage: `url(${BGImage2})`,
@@ -54,9 +56,10 @@ export const HomeResultDiv = styled('div')({
         height: '100%',
         position: 'absolute',
         backgroundRepeat: 'no-repeat',
-        top: '-200px',
+        top: '0',
+        zIndex: '-1',
+        opacity: '0.25',
     },
-    display: 'none',
 });
 
 export const FileInput = styled('div')({

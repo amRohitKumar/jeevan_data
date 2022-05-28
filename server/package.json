@@ -24,12 +24,11 @@
     "npm": "8.3.2"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^1.8.1",
-    "axios": "^0.27.2",
+    "cloudinary": "^1.30.0",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^3.2.0",
     "cors": "^2.8.5",
-    "dotenv": "^16.0.0",
+    "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "express-async-handler": "^1.2.0",
     "express-session": "^1.17.2",
@@ -41,11 +40,6 @@
     "nodemon": "^2.0.16",
     "passport": "^0.5.2",
     "passport-local": "^1.0.0",
-    "passport-local-mongoose": "^7.0.0",
-    "react-redux": "^8.0.1",
-    "redux": "^4.2.0"
-  },
-  "devDependencies": {
-    "redux-logger": "^3.0.6"
+    "passport-local-mongoose": "^7.0.0"
   }
 }

@@ -1,5 +1,6 @@
 const asyncHandler = require("express-async-handler");
 const User = require("../models/userModel");
+const {cloudinary} = require('../cloudinary');
 
 const getReports = asyncHandler(async (req, res) => {
   const {email} = req.params; 
@@ -16,6 +17,13 @@ const getUserByEmail = asyncHandler(async (req, res) => {
 const addReport = asyncHandler(async (req, res) => {
   const email = req.params.email;
   const report = req.body;
+  const {imageUrl} = req.body;
+  const cloudinaryResult = await cloudinary.uploader.upload(imageUrl, {
+    resource_type: 'image',
+    folder: 'Jeevan.Data',
+    allowedFormats: ['jpeg', 'png', 'jpg'],
+  });
+  report.imageUrl = cloudinaryResult.url;
   const reqUser = await User.findOne({"email": email}); 
   reqUser.reports.unshift(report);
   await reqUser.save();

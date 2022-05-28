@@ -78,14 +78,17 @@ const HomePage = () => {
         testDate: currDate,
         result: response.data.result,
         imageName: diseaseImage.name,
+        imageUrl: imageUrl,
       });
+      console.log(res);
       const relatedDoc = await userApi.get(`/doc/${disease}`);
       console.log(relatedDoc);
       setDoctors(relatedDoc.data);
-      console.log(response.data.result, res);
+      // console.log(response.data.result, res);
       setResult(response.data.result);
     };
-    // getResult();
+    getResult();
+    // setDisease(""); setImageUrl(""); setImage("");
   };
 
   return (
@@ -160,11 +163,11 @@ const HomePage = () => {
                 variant="h4"
                 gutterBottom
                 component="div"
-                sx={{ fontSize: "2.5em", fontWeight: "500" }}
+                sx={{ fontSize: "2.5em", fontWeight: "500", letterSpacing: '1.5px' }}
               >
                 Result
               </Typography>
-              <Typography variant="body1" gutterBottom>
+              <Typography variant="body1" sx={{fontWeight: '400', fontSize: '1.5em'}}>
                 {result}
               </Typography>
             </>
