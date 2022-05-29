@@ -47,10 +47,10 @@ the app.
 # Contributing
 * Pull Requests (PRs) are appreciated.
 * The process for contribution is the following:
-        *  Clone the project
-        *  Create a feature branch e.g feature_branch
-        *  Open a PR to develop
-        *  Wait for review and approval.
+  *  Clone the project
+  *  Create a feature branch e.g feature_branch
+  *  Open a PR to develop
+  *  Wait for review and approval.
  * Try to follow PEP-8 guidelines and add useful comments.
 
 
