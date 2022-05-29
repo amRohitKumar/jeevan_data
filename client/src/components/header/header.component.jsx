@@ -58,9 +58,10 @@ const Header = () => {
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
-        console.log("User signed out !!!");
+        // console.log("User signed out !!!");
         dispatch(signOutState());
       })
+      .then(() => setAnchorElUser(null))
       .then(() => navigate('/'))
       .catch((error) => {
         const { code, message, email } = error;
@@ -93,7 +94,7 @@ const Header = () => {
             Jeevan.Data
           </Typography>
 
-          {user.email&&<Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -134,7 +135,7 @@ const Header = () => {
                 </MenuItem>
               ))}
             </Menu>
-          </Box>}
+          </Box>
           <Typography
             variant="h6"
             noWrap
@@ -152,7 +153,7 @@ const Header = () => {
           >
             Jeevan.Data
           </Typography>
-          {user.email&&<Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {!user.isDoctor&&pages.map((page, i) => (
               <Button
                 key={i}
@@ -171,12 +172,12 @@ const Header = () => {
                 {page.name}
               </Button>
             ))}
-          </Box>}
+          </Box>
 
-          {user.email&&<Box sx={{ flexGrow: 0 }}>
+          <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="user-avatar" src="/static/images/avatar/1.jpg" />
               </IconButton>
             </Tooltip>
             <Menu
@@ -211,7 +212,7 @@ const Header = () => {
                     )
               })}
             </Menu>
-          </Box>}
+          </Box>
         </Toolbar>
       </Container>
     </ModifiedAppBar>

@@ -66,7 +66,6 @@ const HomePage = () => {
 
   const handleSubmitHandler = (evt) => {
     evt.preventDefault();
-    console.log(disease, diseaseImage);
     const getResult = async () => {
       const formData = new FormData();
       formData.append("image", diseaseImage);
@@ -80,9 +79,9 @@ const HomePage = () => {
         imageName: diseaseImage.name,
         imageUrl: imageUrl,
       });
-      console.log(res);
+      // console.log(res);
       const relatedDoc = await userApi.get(`/doc/${disease}`);
-      console.log(relatedDoc);
+      // console.log(relatedDoc);
       setDoctors(relatedDoc.data);
       setResult(response.data.result);
     };

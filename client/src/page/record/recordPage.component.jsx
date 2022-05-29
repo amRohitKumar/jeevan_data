@@ -16,7 +16,7 @@ const RecordPage = () => {
   useEffect(() => {
     const fetchReports = async () => {
       const res = await api.get(`/reports/${user.email}`);
-      console.log(res.data);
+      // console.log(res.data);
       setRecords(res.data);
     };
     fetchReports();

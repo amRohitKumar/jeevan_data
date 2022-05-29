@@ -10,7 +10,6 @@ import {
 const ArticleShowPage = () => {
   const location = useLocation();
   const newsObj = location.state;
-  console.log(newsObj);
   return (
     <StyledDiv elevation={3}>
       <ShwoHeading> {newsObj.title}</ShwoHeading>

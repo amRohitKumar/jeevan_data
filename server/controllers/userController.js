@@ -25,6 +25,7 @@ const addReport = asyncHandler(async (req, res) => {
   });
   report.imageUrl = cloudinaryResult.url;
   const reqUser = await User.findOne({"email": email}); 
+  console.log(report);
   reqUser.reports.unshift(report);
   await reqUser.save();
   res.status(200).send();
