@@ -1,3 +1,7 @@
+Jeevan.Data is a virtual health-assistant able to predict diseases using ML, storing medical records and curating 
+healthcare articles along with a doctor-patient interaction facility.
+
+
 # Overview
 
 We plan to create an ecosystem where patients can store their medical history and
@@ -9,14 +13,30 @@ This will help in reducing medical bills of patients and will help them to live 
 life. This ecosystem will also reduce the burden on the medical infrastructure and
 doctors of our country.
 
+Currently, a standard government hospital or local healthcare facility is unable to uniformly document all
+records for services.This creates issues such as requirement of repeated diagnostic tests and consultations,
+delayed treatments, concealment or ignorance of medical history etc.Even in hospitals where digital records
+are maintained, there is no provision of electronic transfer of patient records from one service provider to
+another. Using Jeevan.Data, a patient will be able to keep track of their health records and will be able to
+access them on the go. We plan to increase awareness by making healthcare-related articles available daily in 
+the app.
 
-# Solution/Features proposed in the Application
 
-1. Daily articles about health
-2. Record of previous health reports
-3. Instant Diagnosis based on ML
-4. Articles available in different regional languages
-5. Can live chat with experts from different specializations 
+# Features Implemented
+
+1. Able to instantlydiagnose Covid-19,  Pneumonia, 3 types of Skin-Cancer, 46 types of Retinal Diseases with over 90% accuracy.
+2. Curated Healthcare Articles available in regional languages daily.
+3. Stores and digitises medical records.
+4. Displays contact info of specialist Doctor.
+
+
+# Future Scope:
+1. Inclusion of more diseases which can be diagnosed using ML models.  
+2. Video call facility with doctors and experts
+3. To make the project more visual/hearing impaired-friendly.  
+4. Collaboration with the government to digitise all of the medical records  present.
+5. Collaboration with telemedicine companies to have medicine available at patients’ doorstep.
+
 
 
 # Tech Stack
