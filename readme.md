@@ -31,7 +31,7 @@ the app.
 7. OpenCV
 8. Seaborn, Matplotlib
 9. Torch, Torchvision
-10. PyYaml, copy, Pillow
+10. PyYaml, copy, Pillow, Albummentations
 
 
 # Features Implemented
