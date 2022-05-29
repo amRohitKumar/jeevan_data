@@ -84,11 +84,9 @@ const HomePage = () => {
       const relatedDoc = await userApi.get(`/doc/${disease}`);
       console.log(relatedDoc);
       setDoctors(relatedDoc.data);
-      // console.log(response.data.result, res);
       setResult(response.data.result);
     };
     getResult();
-    // setDisease(""); setImageUrl(""); setImage("");
   };
 
   return (

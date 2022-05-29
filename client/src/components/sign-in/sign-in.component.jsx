@@ -1,21 +1,18 @@
 import { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import GoogleIcon from "@mui/icons-material/Google";
+// import GoogleIcon from "@mui/icons-material/Google";
 import { signInWithEmailAndPassword ,auth } from "../../firebase";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import {
-  selectUser,
   setUserLoginDetails,
-  signOutState,
 } from "../../redux/features/users/userSlice";
 
 import { SignInDiv, ButtonDiv } from "./sign-in.style";
 import { useNavigate } from "react-router-dom";
 
-const SignIn = () => {
-  const user = useSelector(selectUser);
+const SignIn = ({isDoctor}) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -39,10 +36,12 @@ const SignIn = () => {
           name: user.displayName,
           email: user.email,
           photo: user.photoURL,
+          id: user.uid,
+          isDoctor: isDoctor,
         })
       );
     })
-    .then(() => navigate('/home'))
+    .then(() => isDoctor?navigate('/doctors'):navigate('/home'))
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -83,14 +82,14 @@ const SignIn = () => {
           <Button variant="contained" sx={{ backgroundColor: '#3d0ba9'}} onClick={handleEmailPasswordSignIn}>
             Sign In
           </Button>
-          <Button
+          {/* <Button
             variant="contained"
             startIcon={<GoogleIcon />}
             type="button"
             sx={{ marginLeft: "1.5em", backgroundColor: '#3d0ba9' }}
           >
             Sign In with Google
-          </Button>
+          </Button> */}
         </ButtonDiv>
       </form>
     </SignInDiv>

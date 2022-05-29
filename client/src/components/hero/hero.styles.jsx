@@ -67,7 +67,7 @@ export const DoctorImg = styled('img')({
     marginBottom: '50px',
     zIndex: '2',
     padding: '0 1em',
-    ['@media (max-width:580px)']: {
+    '@media (max-width:580px)': {
         height: '250px',
         letterSpacing: '1px',
     }

@@ -1,5 +1,4 @@
 import Typography from "@mui/material/Typography";
-import Logo from '../../assets/images/health-articles-feature.jpg'
 
 import {
   RecodComponentDiv,

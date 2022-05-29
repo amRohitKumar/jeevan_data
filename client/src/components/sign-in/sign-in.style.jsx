@@ -5,7 +5,6 @@ export const SignInDiv = styled('div')({
     display: 'flex',
     flexDirection: 'column',
     padding: '0 3em',
-    display: 'flex',
 });
 
 export const ButtonDiv = styled('div')({

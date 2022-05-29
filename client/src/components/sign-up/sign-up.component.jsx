@@ -2,19 +2,17 @@ import { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import {createUserWithEmailAndPassword, auth} from '../../firebase';
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import api from '../../api/users'
 
 import {
-  selectUser,
   setUserLoginDetails,
 } from "../../redux/features/users/userSlice";
 
 import { SignUpDiv, ButtonDiv } from "./sign-up.style";
 
-const SignUp = () => {
-  const user = useSelector(selectUser);
+const SignUp = ({isDoctor}) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -43,7 +41,7 @@ const SignUp = () => {
     if(password !== confPassword) return;
     createUserWithEmailAndPassword(auth, email, password)
     .then(async (userCredential) => {
-      const user = userCredential.user;
+      // const user = userCredential.user;
       const res = await api.post('/create/user', {name: name, email: email});
       return res.data.userId;
     })
@@ -53,10 +51,11 @@ const SignUp = () => {
           name: name,
           email: email,
           id: userId,
+          isDoctor: isDoctor,
         })
       );
     })
-    .then(() => navigate('/home'))
+    .then(() => isDoctor?navigate('/doctors'):navigate('/home'))
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;

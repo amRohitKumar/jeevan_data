@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
@@ -16,10 +16,7 @@ import { ModifiedAppBar } from "./header.style";
 
 import {
   auth,
-  signInWithPopup,
-  provider,
   signOut,
-  onAuthStateChanged,
 } from "../../firebase";
 
 import {
@@ -56,21 +53,6 @@ const Header = () => {
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
-  };
-
-  const handleAuth = () => {
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        const user = result.user;
-        console.log(`Welcome ${user.displayName} !!!`);
-        console.log(user);
-      })
-      .catch((error) => {
-        const { code, message, email } = error;
-        console.log(
-          `Error !!! Code = ${code}, Message = ${message}, Mail = ${email}`
-        );
-      });
   };
 
   const handleSignOut = () => {
@@ -140,8 +122,8 @@ const Header = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+              {!user.isDoctor&&pages.map((page, i) => (
+                <MenuItem key={i} onClick={handleCloseNavMenu}>
                   <Typography
                     textAlign="center"
                     sx={{ letterSpacing: "2px" }}
@@ -171,9 +153,9 @@ const Header = () => {
             Jeevan.Data
           </Typography>
           {user.email&&<Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
+            {!user.isDoctor&&pages.map((page, i) => (
               <Button
-                key={page.name}
+                key={i}
                 onClick={() => {
                   handleCloseNavMenu();
                   navigate(`/${page.url}`);
@@ -216,16 +198,17 @@ const Header = () => {
               {settings.map((setting, ind) => {
                   if(ind===2)
                     return(
-                      <MenuItem key={setting.name} onClick={handleSignOut}>
+                      <MenuItem key={ind} onClick={handleSignOut}>
                         <Typography textAlign="center">{setting.name}</Typography>
                       </MenuItem>
                     )
                   else 
-                    return(
-                      <MenuItem key={setting.name} onClick={() => {handleCloseUserMenu(); navigate(`/${setting.url}`)}}>
-                        <Typography textAlign="center">{setting.name}</Typography>
-                      </MenuItem>
-                  )
+                    if(!user.isDoctor)
+                      return(
+                        <MenuItem key={setting.name} onClick={() => {handleCloseUserMenu(); navigate(`/${setting.url}`)}}>
+                          <Typography textAlign="center">{setting.name}</Typography>
+                        </MenuItem>
+                    )
               })}
             </Menu>
           </Box>}
