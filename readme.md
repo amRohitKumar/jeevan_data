@@ -51,10 +51,10 @@ the app.
 
 # Getting Started:
 * Download the git repo locally:
- 'git clone https://github.com/shutupRohit/jeevan_data.git --branch master'
+ `git clone https://github.com/shutupRohit/jeevan_data.git --branch master`
 
 * For contribution:
-'git clone https://github.com/shutupRohit/jeevan_data.git --branch develop'
+`git clone https://github.com/shutupRohit/jeevan_data.git --branch develop`
 
 
 
