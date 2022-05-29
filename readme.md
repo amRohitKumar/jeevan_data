@@ -21,6 +21,18 @@ another. Using Jeevan.Data, a patient will be able to keep track of their health
 access them on the go. We plan to increase awareness by making healthcare-related articles available daily in 
 the app.
 
+# Requirements:
+1. Python 3.8.x
+2. Flask
+3. Numpy
+4. Pandas
+5. SkLearn
+6. TensorFlow, Keras
+7. OpenCV
+8. Seaborn, Matplotlib
+9. Torch, Torchvision
+10. PyYaml, copy, Pillow
+
 
 # Features Implemented
 
@@ -36,6 +48,13 @@ the app.
 3. To make the project more visual/hearing impaired-friendly.  
 4. Collaboration with the government to digitise all of the medical records  present.
 5. Collaboration with telemedicine companies to have medicine available at patients’ doorstep.
+
+# Getting Started:
+* Download the git repo locally:
+ 'git clone https://github.com/shutupRohit/jeevan_data.git --branch master'
+
+* For contribution:
+'git clone https://github.com/shutupRohit/jeevan_data.git --branch develop'
 
 
 
