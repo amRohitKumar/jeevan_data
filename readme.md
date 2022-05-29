@@ -42,7 +42,17 @@ the app.
 # Tech Stack
 
 1. Web Application - React Js,Node Js,MongoDB,Express (MERN-Stack),Redux,REST-APIs,Styling frameworks.
-2. AI -  Python,OpenCV,Flask,PyTorch,Docker,Seaborn,MatplotLib, TensorFlow, Flask.
+2. AI -  Python,OpenCV,Flask,PyTorch,Docker,Seaborn,MatplotLib, TensorFlow, Flask.\
+
+# Contributing
+* Pull Requests (PRs) are appreciated.
+* The process for contribution is the following:
+        * Clone the project
+        * Create a feature branch e.g feature_branch
+        * Open a PR to develop
+        * Wait for review and approval.
+ * Try to follow PEP-8 guidelines and add useful comments.
+
 
 # Devlopers:
 
