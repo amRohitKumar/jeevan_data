@@ -23,7 +23,7 @@ another. Using Jeevan.Data, a patient will be able to keep track of their health
 access them on the go. We plan to increase awareness by making healthcare-related articles available daily in 
 the app.
 
-#Folder Structure
+# Folder Structure
 
     .
     ├── client                   # Frontend folder (REACT)
