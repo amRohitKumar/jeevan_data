@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+Jeevan.Data is a virtual health-assistant able to predict diseases using ML, storing medical records and curating 
+healthcare articles along with a doctor-patient interaction facility.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Logo](https://github.com/shutupRohit/jeevan_data/blob/main/client/public/jeevan-data-logo.png)
 
-## Available Scripts
 
-In the project directory, you can run:
+## Overview
 
-### `npm start`
+We plan to create an ecosystem where patients can store their medical history and
+enable digitalisation of medical records and be a carrier in the government of
+India’s ayushman bharat yojana. We plan to shift Indian patients on preventive
+healthcare using AI-based algorithms which can identify various diseases like Skin
+Cancer, Covid-19, Retinal Diseases,Pneumonia,etc. in advance and will prompt the user to visit the doctor.
+This will help in reducing medical bills of patients and will help them to live a better
+life. This ecosystem will also reduce the burden on the medical infrastructure and
+doctors of our country.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Currently, a standard government hospital or local healthcare facility is unable to uniformly document all
+records for services.This creates issues such as requirement of repeated diagnostic tests and consultations,
+delayed treatments, concealment or ignorance of medical history etc.Even in hospitals where digital records
+are maintained, there is no provision of electronic transfer of patient records from one service provider to
+another. Using Jeevan.Data, a patient will be able to keep track of their health records and will be able to
+access them on the go. We plan to increase awareness by making healthcare-related articles available daily in 
+the app.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Client Folder Structure
+    
+    .
+    ├── client                   
+    │   ├── node_modules         # Node modules
+    │   ├── public               # React public directory
+    │   ├── src                  
+    │   │   ├── api              # Axios api folder
+    │   │   ├── assets           # Static assets
+    │   │   ├── components       # React components
+    │   │   ├── page             # React pages
+    │   │   ├── redux            # Redux store
+    │   │   ├── firebase.js      # Firebase authentication file
+    │   │   ├── index.css        # CSS file
+    │   │   ├── App.css          # CSS file
+    │   │   ├── App.js           
+    │   │   ├── index.js         
+    │   │   └── README.md             
+    │   ├── package-lock.json         
+    │   ├── package.json         
+    │   └── README.md                           
+    └── ...
 
-### `npm test`
+## Local Setup:
+1. Clone the github repository.
+```
+https://github.com/amRohitKumar/jeevan_data.git
+```
+2. Open the folder in Visual Studio Code.
+3. Go to the client directory.
+```
+cd client
+```
+4. Ensure that you have [Node.js](https://nodejs.org/en/) installed.
+5. Install required dependencies by :
+```
+npm install
+```
+6. Start development server for react by running following command , this will start your application in http://localhost:3000/ :
+```
+npm start
+```
+**Since ML models and backend are not hosted, we have to serve this as well locally.**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Features Implemented
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Able to instantlydiagnose Covid-19,  Pneumonia, 3 types of Skin-Cancer, 46 types of Retinal Diseases with over 90% accuracy.
+2. Curated Healthcare Articles available in regional languages daily.
+3. Stores and digitises medical records.
+4. Displays contact info of specialist Doctor.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Future Scope:
+1. Inclusion of more diseases which can be diagnosed using ML models.  
+2. Video call facility with doctors and experts
+3. To make the project more visual/hearing impaired-friendly.  
+4. Collaboration with the government to digitise all of the medical records  present.
+5. Collaboration with telemedicine companies to have medicine available at patients’ doorstep.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Tech Stack
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Web Application - React Js,Node Js,MongoDB,Express (MERN-Stack),Redux,REST-APIs,Styling frameworks.
+2. AI -  Python,OpenCV,Flask,PyTorch,Docker,Seaborn,MatplotLib, TensorFlow, Flask.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Contributing
+* Pull Requests (PRs) are appreciated.
+* The process for contribution is the following:
+  *  Clone the project
+  *  Create a feature branch e.g feature_branch
+  *  Open a PR to develop
+  *  Wait for review and approval.
+ * Try to follow PEP-8 guidelines and add useful comments.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Devlopers:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Rohit Kumar, B.Tech in Computer Science and Engineering
+2. Apoorva Bhardwaj,B.Tech in Electrical Engineering
+3. Mohd Rehan,B.Tech in Electrical Engineering
+4. Harsh Gupta,B.Tech in Electronics and Communications Engineering
