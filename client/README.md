@@ -1,8 +1,9 @@
 Jeevan.Data is a virtual health-assistant able to predict diseases using ML, storing medical records and curating 
 healthcare articles along with a doctor-patient interaction facility.
 
-![Logo](https://github.com/shutupRohit/jeevan_data/blob/main/client/public/jeevan-data-logo.png)
-
+<p align="center">
+<img href="https://github.com/shutupRohit/jeevan_data/blob/main/client/public/jeevan-data-logo.png" width="500"/>
+</p>
 
 ## Overview
 
@@ -65,6 +66,14 @@ npm install
 ```
 npm start
 ```
+# Screenshots
+<p align="left">
+<img src="https://user-images.githubusercontent.com/78253058/199804419-fe771708-b43a-4147-8588-98ff147a6936.png" width="400"/>
+<img src="https://user-images.githubusercontent.com/78253058/199804666-bf81f5e2-c682-46dc-a272-7ec0764b9c62.png" width="400"/>
+<img src="https://user-images.githubusercontent.com/78253058/199804813-0f192745-62f2-4b28-a9c3-6a9be931ec26.png" width="400"/>
+<img src="https://user-images.githubusercontent.com/78253058/199804946-5e68827e-86dd-4acf-a28c-9027cc4ab232.png" width="400"/>
+</p>
+
 **Frontend of website is hosted at https://main--splendorous-dragon-dfa2c8.netlify.app**
 **Since ML models and backend are not hosted, we have to serve this as well locally.**
 
