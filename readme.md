@@ -32,6 +32,14 @@ the app.
 3. Stores and digitises medical records.
 4. Displays contact info of specialist Doctor.
 
+# Screenshots
+<p align="left">
+<img src="https://user-images.githubusercontent.com/78253058/199804419-fe771708-b43a-4147-8588-98ff147a6936.png" width="500"/>
+<img src="https://user-images.githubusercontent.com/78253058/199804666-bf81f5e2-c682-46dc-a272-7ec0764b9c62.png" width="500"/>
+<img src="https://user-images.githubusercontent.com/78253058/199804813-0f192745-62f2-4b28-a9c3-6a9be931ec26.png" width="500"/>
+<img src="https://user-images.githubusercontent.com/78253058/199804946-5e68827e-86dd-4acf-a28c-9027cc4ab232.png" width="500"/>
+</p>
+
 # Folder Structure
 
     .
