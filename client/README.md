@@ -2,7 +2,7 @@ Jeevan.Data is a virtual health-assistant able to predict diseases using ML, sto
 healthcare articles along with a doctor-patient interaction facility.
 
 <p align="center">
-<img href="https://github.com/shutupRohit/jeevan_data/blob/main/client/public/jeevan-data-logo.png" width="500"/>
+<img src="https://github.com/shutupRohit/jeevan_data/blob/main/client/public/jeevan-data-logo.png" width="500"/>
 </p>
 
 ## Overview
