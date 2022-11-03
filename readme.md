@@ -23,6 +23,16 @@ another. Using Jeevan.Data, a patient will be able to keep track of their health
 access them on the go. We plan to increase awareness by making healthcare-related articles available daily in 
 the app.
 
+#Folder Structure
+
+    .
+    ├── client                   # Frontend folder (REACT)
+    ├── predictDisease           # ML Models to predict disease
+    ├── server                   # Backend folder (Node/Express)
+    ├── Jeevan-Data.pptx         # Project presentation
+    ├── .gitignore               
+    └── README.md
+
 # Requirements:
 1. Python 3.8.x
 2. Flask
@@ -53,10 +63,10 @@ the app.
 
 # Getting Started:
 * Download the git repo locally:
- `git clone https://github.com/shutupRohit/jeevan_data.git --branch master`
+ `git clone https://github.com/amRohitKumar/jeevan_data.git --branch master`
 
 * For contribution:
-`git clone https://github.com/shutupRohit/jeevan_data.git --branch develop`
+`git clone https://github.com/amRohitKumar/jeevan_data.git --branch develop`
 
 
 
@@ -77,7 +87,7 @@ the app.
 
 # Devlopers:
 
-1. Apoorva Bhardwaj,B.Tech in Electrical Engineering
-2. Mohd Rehan,B.Tech in Electrical Engineering
-3. Harsh Gupta,B.Tech in Electronics and Communications Engineering
-4. Rohit Kumar, B.Tech in Mining Engineering
+1. Rohit Kumar, B.Tech in Computer Science and Engineering
+2. Apoorva Bhardwaj,B.Tech in Electrical Engineering
+3. Mohd Rehan,B.Tech in Electrical Engineering
+4. Harsh Gupta,B.Tech in Electronics and Communications Engineering
