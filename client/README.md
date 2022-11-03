@@ -74,7 +74,7 @@ npm start
 <img src="https://user-images.githubusercontent.com/78253058/199804946-5e68827e-86dd-4acf-a28c-9027cc4ab232.png" width="400"/>
 </p>
 
-**Frontend of website is hosted at https://main--splendorous-dragon-dfa2c8.netlify.app**
+**Frontend of website is hosted at [https://jeevandata.netlify.app/](https://jeevandata.netlify.app/)**
 **Since ML models and backend are not hosted, we have to serve this as well locally.**
 
 
