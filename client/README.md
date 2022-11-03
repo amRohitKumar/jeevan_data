@@ -65,7 +65,7 @@ npm install
 ```
 npm start
 ```
-**Frontend of website is hosted at https://main--splendorous-dragon-dfa2c8.netlify.app
+**Frontend of website is hosted at https://main--splendorous-dragon-dfa2c8.netlify.app**
 **Since ML models and backend are not hosted, we have to serve this as well locally.**
 
 
