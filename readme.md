@@ -1,8 +1,9 @@
 Jeevan.Data is a virtual health-assistant able to predict diseases using ML, storing medical records and curating 
 healthcare articles along with a doctor-patient interaction facility.
 
-![Logo](https://github.com/shutupRohit/jeevan_data/blob/main/client/public/jeevan-data-logo.png)
-
+<p align="center">
+<img src="https://github.com/shutupRohit/jeevan_data/blob/main/client/public/jeevan-data-logo.png" width="300">
+</p>
 
 # Overview
 
@@ -22,6 +23,14 @@ are maintained, there is no provision of electronic transfer of patient records 
 another. Using Jeevan.Data, a patient will be able to keep track of their health records and will be able to
 access them on the go. We plan to increase awareness by making healthcare-related articles available daily in 
 the app.
+
+# Features Implemented
+
+1. Users can login and upload image to diagnose.
+1. Able to instantly diagnose Covid-19,  Pneumonia, 3 types of Skin-Cancer, 46 types of Retinal Diseases with over 90% accuracy.
+2. Curated Healthcare Articles available in regional languages daily.
+3. Stores and digitises medical records.
+4. Displays contact info of specialist Doctor.
 
 # Folder Structure
 
@@ -44,14 +53,6 @@ the app.
 8. Seaborn, Matplotlib
 9. Torch, Torchvision
 10. PyYaml, copy, Pillow, Albummentations
-
-
-# Features Implemented
-
-1. Able to instantlydiagnose Covid-19,  Pneumonia, 3 types of Skin-Cancer, 46 types of Retinal Diseases with over 90% accuracy.
-2. Curated Healthcare Articles available in regional languages daily.
-3. Stores and digitises medical records.
-4. Displays contact info of specialist Doctor.
 
 
 # Future Scope:
